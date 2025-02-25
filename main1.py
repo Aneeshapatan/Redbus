@@ -74,7 +74,7 @@ def main():
             if data.empty:
                 st.warning(f"No data available for route '{selected_route}'.")
             else:
-                st.write(f"### Bus details for route: {selected_route}")
+                st.write(f" Bus details for route: {selected_route}")
                 st.dataframe(data)
 
                 # Filtering options
@@ -92,7 +92,7 @@ def main():
                     if filtered_data.empty:
                         st.warning("No buses match the selected filters.")
                     else:
-                        st.write("### Filtered Bus Details")
+                        st.write(" Filtered Bus Details")
                         st.dataframe(filtered_data)
 
 if __name__ == "__main__":
