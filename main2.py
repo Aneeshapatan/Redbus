@@ -23,7 +23,7 @@ table['Star_Rating'] = table['Star_Rating'].astype(float).round(0).astype('Int64
 table['Price'] = table['Price'].astype(float).round(0).astype('Int64')
 
 # User interface
-st.title("🚌 RedBus Availability Checker")
+st.title(" RedBus Availability Checker")
 st.write("Discover the best bus routes and their availability!")
 
 # Dropdown for route selection
@@ -39,13 +39,13 @@ if selected_state != "Choose your Route_Link":
         st.sidebar.subheader("🎛 Filter Options")
 
         # Star Rating filter
-        rating = st.sidebar.radio("⭐ Star Rating", options=[5, 4, 3, 2, 1], horizontal=True)
+        rating = st.sidebar.radio("Star Rating", options=[5, 4, 3, 2, 1], horizontal=True)
 
         # Maximum Price filter
         max_price = st.sidebar.slider(" Max Ticket Price (INR)", 100, 10000, step=100, value=5000)
 
         # Required Seats filter
-        seats = st.sidebar.number_input("🎟 Seats Required", min_value=1, max_value=57, value=1)
+        seats = st.sidebar.number_input(" Seats Required", min_value=1, max_value=57, value=1)
 
         # Apply filters
         filtered_buses = table[
@@ -65,7 +65,7 @@ if selected_state != "Choose your Route_Link":
                     bus_details = filtered_buses[filtered_buses["Bus_Name"] == bus_selected][
                         ["Bus_Type", "Departing_Time", "Duration", "Star_Rating", "Price", "Reaching_Time", "Seat_Availability"]
                     ]
-                    st.subheader("📋 Bus Details:")
+                    st.subheader("Bus Details:")
                     st.table(bus_details)
         else:
             st.warning(" No buses found with the selected criteria. Please tweak your filters.")
