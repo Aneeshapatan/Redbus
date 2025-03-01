@@ -36,7 +36,7 @@ if selected_state != "Choose your Route_Link":
     route_selected = st.selectbox("Select Your Route", ["Choose your route"] + routes)
 
     if route_selected != "Choose your route":
-        st.sidebar.subheader("🎛 Filter Options")
+        st.sidebar.subheader(" Filter Options")
 
         # Star Rating filter
         rating = st.sidebar.radio("Star Rating", options=[5, 4, 3, 2, 1], horizontal=True)
